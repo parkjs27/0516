@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container {
+          width: 940px;
+          margin: 10px auto;
+          padding: 20px;
+          border: 1px solid #bcbcbc;
+        }
+        #header {
+          padding: 20px;
+          margin-bottom: 20px;
+          border: 1px solid #bcbcbc;
+        }
+        #content {
+          width: 580px;
+          padding: 20px;
+          margin-bottom: 20px;
+          float: left;
+          border: 1px solid #bcbcbc;
+        }
+        #sidebar {
+          width: 260px;
+          padding: 20px;
+          margin-bottom: 20px;
+          float: right;
+          border: 1px solid #bcbcbc;
+        }
+        #footer {
+          
+          clear: both;
+          padding: 20px;
+          border: 1px solid #bcbcbc;
+        }
+        @media ( max-width: 480px ) {
+          #container {
+            width: auto;
+          }
+          #content {
+            float: none;
+            width: auto;
+          }
+          #sidebar {
+            float: none;
+            width: auto;
+          }
+        }
+
+        textarea{
+        width: 100%;
+        height: 6.25em;
+       
+        resize: none;
+      }
+
+      </style>
+
+    <script>
+            function change() {
+    let p = document.getElementById("firstP");
+    p.innerHTML= "회사명 : 구글 <img src='https://www.google.co.kr/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'> ";
+     }
+
+     
+  function change() {
+	let span = document.getElementById("mySpan"); 
+	if (span.style.color === "green") { 
+		span.style.color = "red";
+		span.style.fontSize = "";
+		span.style.display = "";
+		span.style.width = "";
+		span.style.border = "";
+		span.style.margin = "";
+	} else { 
+		span.style.color = "green";
+		span.style.fontSize = "30px";
+		span.style.display = "block";
+		span.style.width = "6em";
+		span.style.border = "3px dotted magenta";
+		span.style.margin = "20px";
+	}
+}
+
+function changeBgColor() {
+  let body = document.getElementsByTagName("body")[0];
+  if (body.style.backgroundColor === "") {
+  	let randomColor = Math.floor(Math.random()*16777215).toString(16);
+  	body.style.backgroundColor = "#" + randomColor;
+  } else { 
+  	body.style.backgroundColor = "";
+  }
+}
+
+
+    </script>
+    </head>
+    <body>
+      <div id="container">
+        <div id="header">
+          <h1>중간고사 제출</h1>
+        </div>
+        <div id="content">
+          <h2>내 용</h2>
+          <hr>
+          <label>
+            <span>1. 이      름</span><input type="text" placeholder="                박상주 "><br>
+        </label>
+        <hr>
+        <label>
+            <span>자기 소개</span><textarea placeholder=""> </textarea>
+        
+        </label>
+        <hr>
+        <h3>내가 가고싶은 곳</h3>
+           
+           <p id="firstP" style="color:blue" 
+               onclick="change()">
+               여기를<span style="color:red">클릭하세요</span>
+           </p>
+        <hr>
+        <span>이  메  일 : </span><input type="email" placeholder="">
+        </div>
+        <div id="sidebar">
+          
+          <ul>
+            <li> <p style="color:rgb(120, 120, 163)" >이것은 
+                <span id="mySpan" style="color:red">문장입니다.</span>
+                </p></li>
+            <li><input type="button" value="스타일 변경" onclick="change()">
+                <input type="button" value="랜덤 배경 색 변경" onclick="changeBgColor()"></li>
+               
+
+          </ul>
+          
+        </div>
+        <div id="footer">
+          <p>
+           
+            <input type="submit" value="제출">
+          </p>
+        </div>
+      </div>
+    </body>
+  </html>

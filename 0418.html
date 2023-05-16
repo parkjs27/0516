@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function randomInt() { // 1~9의 십진 난수 리턴
+            return Math.floor(Math.random()*9) + 1; 
+        }
+    </script>
+    
+
+
+    <!--메소드
+    <script> 
+        //메소드로 사용할 3 개의 함수 작성
+        function inquiry() { return this.balance; } // 잔금 조회
+        function deposit(money) { this.balance += money; } // money 만큼 저금
+        function withdraw(money) { // 예금 인출, money는 인출하고자 하는 액수
+                                                // money가 balance보다 작다고 가정
+            this.balance -= money; 
+            return money;
+        } 
+    
+        // 사용자 객체 만들기
+        let account  = new Object(); 
+        account.owner = "황기태"; // 계좌 주인 프로퍼티 생성 및 초기화
+        account.code = "111"; // 코드 프로퍼티 생성 및 초기화
+        account.balance = 35000; // 잔액 프로퍼티 생성 및 초기화
+        account.inquiry = inquiry; // 메소드 작성
+        account.deposit = deposit; // 메소드 작성
+        account.withdraw = withdraw; // 메소드 작성
+    </script>
+    -->
+
+    <!--프로토-->
+    <script>
+        // 프로토타입 만들기 : 생성자 함수 작성
+        function Account(owner, code, balance) {
+            // 프로퍼티 만들기
+            this.owner = owner; 	// 계좌 주인 프로퍼티 만들기 
+            this.code = code; 		// 계좌 코드 프로퍼티 만들기 
+            this.balance = balance; // 잔액 프로퍼티 만들기 
+            
+            // 메소드 만들기
+            this.inquiry = function () { return this.balance; }
+            this.deposit = function (money) { this.balance += money; } 
+            this.withdraw = function (money) { // 예금 인출, money는 인출하는 액수
+                // money가 balance보다 작다고 가정
+                this.balance -= money; 
+                return money;
+            } 
+        }
+
+    </script>
+    
+
+
+    <script>
+        function change() {
+            let span = document.getElementById("mySpan"); 
+            span.style.color = "green"; // 글자 색 green
+            span.style.fontSize = "30px"; // 글자 크기는 30픽셀
+            span.style.display = "block"; // 블록 박스로 변경
+            span.style.width = "6em"; // 박스의 폭. 6 글자 크기
+            span.style.border = "3px dotted magenta"; // 3픽셀 점선 magenta 테두리
+            span.style.margin = "20px"; // 상하좌우 여백 20px
+        }
+        </script>
+        
+
+        <script>
+            function viewPlace() {
+                let tagArray = document.getElementsByClassName("place");
+                for(let i=0; i<tagArray.length; i++) {
+                    let tag = tagArray[i];
+                    tag.style.color = "orchid";
+                    tag.style.fontSize = "20px";
+                    tag.style.textDecoration = "underline";
+                }
+            }
+            function viewFood() {
+                let tagArray = document.getElementsByClassName("food");
+                for(let i=0; i<tagArray.length; i++) {
+                    var tag = tagArray[i];
+                    tag.style.color = "darkcyan";
+                }
+            }
+            </script>
+            
+
+
+</head>
+
+
+<body>
+
+
+   <!-- <h3>페이지 방문 초시간이  짝수이면 violet, 홀수이면 lightskyblue 배경</h3>
+    <hr>
+    <script>
+        let current = new Date(); // 현재 시간을 가진 Date 객체 생성
+        if(current.getSeconds() % 2 == 0)
+            document.body.style.backgroundColor = "violet";
+        else
+            document.body.style.backgroundColor = "lightskyblue";
+    
+        document.write("현재 시간 : ");
+        document.write(current.getHours(), "시,");
+        document.write(current.getMinutes(), "분,");
+        document.write(current.getSeconds(), "초<br>");
+    </script>
+-->
+
+<!--<script>
+    let a = new String('B and G')
+    let b = "!!";
+document.write("a : " + a + "<br>");
+document.write("b : " + b + "<br><hr>");
+
+document.write(a.charAt(0) + "<br>");
+document.write(a.concat(b, "입니다") + "<br>");
+document.write(a.indexOf("s") + "<br>");
+document.write(a.indexOf("And") + "<br>");
+document.write(a.slice(5, 8) + "<br>");
+document.write(a.substr(5, 3) + "<br>");
+document.write(a.toUpperCase() + "<br>");
+document.write(a.replace("and", "or") + "<br>");
+document.write("    kitae   ".trim() + "<br><hr>");
+
+let sub = a.split(" ");
+document.write("a를 빈칸으로 분리<br>");
+for(let i=0; i<sub.length; i++)
+	document.write("sub" + i + "=" + sub[i] + "<br>");
+
+document.write("<hr>String 메소드를 실행 후 a와 b 변함 없음<br>");
+document.write("a : " + a + "<br>");
+document.write("b : " + b + "<br>");
+</script>
+-->
+<h3>Math를 활용한 구구단 연습</h3>
+<hr>
+<script>
+	// 구구단 문제 생성
+	let ques = randomInt() + "*" + randomInt();
+	// 사용자로부터 답 입력
+	let user = prompt(ques + " 값은 얼마입니까?", 0);
+	if(user == null) { // 취소 버튼이 클릭된 경우 
+		document.write("구구단 연습을 종료합니다");
+	}
+	else {
+		let ans = eval(ques); // 구구단 정답 계산
+		if(ans == user) // 정답과 사용자 입력 비교
+			document.write("정답! ");
+		else 
+			document.write("아니오! ");
+		document.write(ques + "=" + "<strong>" + ans
+									 + "</strong>입니다<br>");
+}
+</script>
+
+<!--<h3>new Object()로 사용자 객체 만들기</h3>
+<hr>
+<script>
+	// 객체 활용
+	document.write("account : ");
+	document.write(account.owner + ", ");
+	document.write(account.code + ", ");
+	document.write(account.balance + "<br>");
+
+	account.deposit(10000); // 10000원 저금
+	document.write("10000원 저금 후 잔액은 " + account.inquiry() + "<br>");
+	account.withdraw(5000); // 5000원 인출
+	document.write("5000원 인출 후 잔액은 " + account.inquiry() + "<br>");
+</script>
+-->
+<hr>
+
+<h3>Account 프로토타입 만들기</h3>
+<hr>
+<script>
+	// new 연산자 이용하여 계좌 객체 생성
+	let account = new Account("황기태", "111", 35000);
+
+	// 객체 활용
+	document.write("account : ");
+	document.write(account.owner + ", ");
+	document.write(account.code + ", ");
+	document.write(account.balance + "<br>");
+
+	account.deposit(10000); // 10000원 저금
+	document.write("10000원 저금 후 잔액은 " + account.inquiry() + "<br>");
+	account.withdraw(5000); // 5000원 인출
+	document.write("5000원 인출 후 잔액은 " + account.inquiry() + "<br>");
+</script>
+
+
+<hr>
+
+
+<h3>CSS 스타일 동적 변경</h3>
+<hr>
+<p style="color:blue" >이것은 
+    <span id="mySpan" style="color:red">문장입니다.</span>
+</p>
+<input type="button" value="스타일변경" onclick="change()">
+
+
+
+<hr>
+
+<h3>가고 싶은 곳 먹고 싶은 것</h3><br>
+	<button onclick="viewPlace()">가고 싶은 곳</button>
+	<button onclick="viewFood()">먹고 싶은 것</button>
+</h3>
+<hr>
+<p><span class="place">제주도</span>에 가서 <span class="food">흑돼지</span>를 먹고 싶고요.
+<span class="place">독도</span>에 가서 <span class="food">독도 새우</span>도 먹고 싶어요. 제일 가고 싶은 곳 <span class="place">부산 자갈치 시장</span>에서 <span class="food">꼼장어 구이</span>도 먹고 싶어요</p>
+
+
+
+
+</body>
+
+
+
+
+</html>
+    

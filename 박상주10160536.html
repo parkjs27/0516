@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    textarea{
+        width: 100%;
+        height: 6.25em;
+       
+        resize: none;
+      }
+
+  
+      aside {
+	width: 100px;
+	padding: 50px;
+	box-sizing: border-box;
+	background: #666666;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    }
+    #wep{
+        width: 300px;
+        padding: 50px;
+    }
+
+
+    main {
+	display: flex;
+    }
+
+    section {
+	width: 300px;
+	text-align: center;
+	padding: 60px 60px;
+	box-sizing: border-box;
+	background: #9eaaeb;
+    }
+
+
+    
+
+
+</style>
+
+
+
+
+<script>
+    function change() {
+  let p = document.getElementById("firstP");
+  p.innerHTML= "회사명 : 구글 <img src='https://www.google.co.kr/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'> ";
+  }
+
+
+  function change() {
+	let span = document.getElementById("mySpan"); 
+	if (span.style.color === "green") { // 스타일 변경 끄기
+		span.style.color = "red";
+		span.style.fontSize = "";
+		span.style.display = "";
+		span.style.width = "";
+		span.style.border = "";
+		span.style.margin = "";
+	} else { // 스타일 변경 켜기
+		span.style.color = "green";
+		span.style.fontSize = "30px";
+		span.style.display = "block";
+		span.style.width = "6em";
+		span.style.border = "3px dotted magenta";
+		span.style.margin = "20px";
+	}
+}
+
+function changeBgColor() {
+  let body = document.getElementsByTagName("body")[0];
+  if (body.style.backgroundColor === "") { // 배경색 변경 켜기
+  	let randomColor = Math.floor(Math.random()*16777215).toString(16);
+  	body.style.backgroundColor = "#" + randomColor;
+  } else { // 배경색 변경 끄기
+  	body.style.backgroundColor = "";
+  }
+}
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</head>
+<body>
+    
+
+    <main>
+
+    <article>
+    <section>
+    
+       
+        
+       
+        <label>
+            <span>1. 이      름</span><input type="text" placeholder="                박상주 "><br>
+        </label>
+        <hr>
+        <label>
+            <span>자기소개</span><textarea placeholder=""></textarea>
+        
+        </label>
+        <hr>
+        <h3>내가 가고싶은 곳</h3>
+           <hr>
+           <p id="firstP" style="color:blue" 
+               onclick="change()">
+               여기에	<span style="color:red">클릭하세요</span>
+           </p>
+          
+    
+ 
+    
+    </section>
+    </article>
+    <div id="wep" >
+        <aside>버튼
+           
+           
+        <p style="color:blue" >이것은 
+        <span id="mySpan" style="color:red">문장입니다.</span>
+        </p>
+        <input type="button" value="스타일 변경" onclick="change()">
+        <input type="button" value="배경 색 변경" onclick="changeBgColor()">
+        </aside>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기소개</title>
+    <style>
+      /* 기본 색상 */
+      body {
+        background-color: #e0e0e0;
+        color: #333;
+      }
+
+      /* 버튼 스타일 */
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* 버튼 클릭시 색상 변경 */
+      button:focus {
+        background-color: #3e8e41;
+      }
+
+      /* 색상 변경 */
+      .highlight {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>자기소개</h1>
+    <p>안녕하세요, 저는 ChatGPT라는 인공지능 대화 모델입니다.</p>
+    <p>제 목적은 사용자들과 대화하여 그들의 궁금증을 해결하는 것입니다.</p>
+    <p>저를 이용하시면 다양한 분야에서 정보와 도움을 얻으실 수 있습니다.</p>
+    <button onclick="highlight()">글자색 바꾸기</button>
+
+    <script>
+      function highlight() {
+        var p = document.getElementsByTagName('p');
+        for (var i = 0; i < p.length; i++) {
+          p[i].classList.toggle('highlight');
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기소개</title>
+
+    <style>
+        body {
+          background-color: lightblue;
+          font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+          color: navy;
+          font-size: 36px;
+          text-align: center;
+          text-shadow: 2px 2px 4px #000000;
+        }
+      
+        p {
+          font-size: 20px;
+          line-height: 1.5;
+          padding: 10px;
+          border: 1px solid navy;
+          border-radius: 10px;
+        }
+      </style>
+
+<title>Button Color Change</title>
+<style>
+    .button {
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background-color: lightblue;
+    }
+
+    .button:active {
+        background-color: darkblue;
+    }
+
+    .red {
+        background-color: red;
+    }
+</style>
+
+</head>
+<body>
+	<h1>자기소개</h1>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+
+
+    <button class="button" onclick="changeColor()">Click me!</button>
+
+	<script>
+		function changeColor() {
+			var button = document.querySelector(".button");
+			button.classList.add("red");
+		}
+	</script>
+</body>
+</html>

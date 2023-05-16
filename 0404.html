@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+div{
+	display : inline-block;
+	border : 2px dotted orangered ;
+	background : powderblue;
+	margin : 10px;
+	width : 200px; height : 200px;
+}
+
+#down:hover {
+	position : relative;
+	left : 20px; 
+	top : 20px;    
+	background : green;
+}
+#up:hover {
+	position : relative;
+	right : 20px; 
+	bottom : 20px;
+	background : green;
+
+}
+
+div.div1{
+    display : inline-block;
+	height : 50px;
+	width : 50px;
+	border : 1px solid lightgray;
+	text-align : center;
+	color : white;
+	background : red
+
+}
+
+</style>
+
+<script src="0404.js">
+
+</script>
+
+
+</head>
+<body>
+    
+    <h3>박스 모델</h3>
+    <p>margin 30px, padding 20px, border 5px의
+     빨간색 점선</p> 
+    <hr>
+    <div style="background : orange">
+        <img src="imgs/chrome.png" alt="크롬">
+
+    </div>
+<hr>
+
+<h3>상대 배치, relative</h3>
+h와 k 글자에 마우스를 올려 보세요
+<hr>
+
+	<div class="div1">T</div>
+	<div id="down" class="div1">h</div>
+	<div class="div1">a</div>
+	<div class="div1">n</div>
+	<div id="up"class="div1">k</div>
+	<div class="div1">s</div>
+
+<hr>
+<img src="imgs/chrome.png" alt="이미지" 
+			onmouseover="over(this)"
+			onmouseout="out(this)">
+
+
+
+</body>
+</html>
